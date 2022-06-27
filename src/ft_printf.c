@@ -1,9 +1,8 @@
 #include "ft_printf.h"
 
-int	ft_writechar(char c, int n)
+void	ft_writechar(char c)
 {
-	write(1, &c, n);
-	return (0);
+	write(1, &c, 1);
 }
 
 int	check_char(const char *s, va_list ptr)
@@ -27,7 +26,7 @@ int	check_char(const char *s, va_list ptr)
 		}
 		if (s[i] && s[i] != '%')
 		{
-			ft_writechar(s[i], 1);
+			ft_writechar(s[i]);
 			i++;
 			len++;
 		}
